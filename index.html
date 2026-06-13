@@ -1,37 +1,363 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>LearnLens-AI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LearnLens AI | AI Intern</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    line-height:1.6;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:800;
+    color:#38bdf8;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:100px 20px 40px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#38bdf8;
+}
+
+.hero p{
+    font-size:1.2rem;
+    color:#cbd5e1;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    margin:10px;
+}
+
+.primary{
+    background:#38bdf8;
+    color:#0f172a;
+}
+
+.secondary{
+    border:1px solid #38bdf8;
+    color:#38bdf8;
+}
+
+section{
+    padding:80px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+}
+
+.about{
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+    color:#cbd5e1;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.tech-stack{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.tech{
+    background:#1e293b;
+    padding:12px 18px;
+    border-radius:25px;
+}
+
+.roadmap{
+    max-width:600px;
+    margin:auto;
+}
+
+.roadmap li{
+    margin:15px 0;
+    font-size:1.1rem;
+}
+
+.team{
+    text-align:center;
+}
+
+.member{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+}
+
+.member h3{
+    color:#38bdf8;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:#020617;
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+</style>
 </head>
+
 <body>
-    <h1>LearnLens-AI</h1>
 
-    <p>Building AI solutions through learning and collaboration.</p>
+<header>
+    <div class="nav">
+        <div class="logo">LearnLens AI</div>
 
-    <h2>Team Members</h2>
-    <ul>
-        <li>Balapriyan Selvakumar</li>
-        <li>Rubiga Hariprasath</li>
-        <li>Member 3</li>
-    </ul>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#team">Team</a>
+        </div>
+    </div>
+</header>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>Python</li>
-        <li>Machine Learning</li>
-        <li>Embedded Systems</li>
-        <li>Data Analysis</li>
-    </ul>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Building the Future of <span>Engineering Education</span></h1>
 
-    <h2>Interests</h2>
-    <ul>
-        <li>Artificial Intelligence</li>
-        <li>Robotics</li>
-        <li>Automation</li>
-        <li>Smart Systems</li>
-    </ul>
+        <p>
+            AI Intern is an intelligent engineering learning assistant that helps students
+            understand concepts, analyze documents, and accelerate technical learning.
+        </p>
 
-    <h2>Project Interest</h2>
-    <p>AI + Embedded Systems Applications</p>
+        <a href="https://github.com/LearnLens-AI" class="btn primary">
+            View Project
+        </a>
+
+        <a href="#about" class="btn secondary">
+            Learn More
+        </a>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About AI Intern</h2>
+
+        <p class="about">
+            AI Intern is an AI-powered educational assistant developed by LearnLens AI.
+            The platform combines Retrieval-Augmented Generation (RAG), document analysis,
+            and personalized learning to help engineering students learn faster and better.
+        </p>
+    </div>
+</section>
+
+<section id="features">
+    <div class="container">
+
+        <h2 class="section-title">Features</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Engineering Tutor</h3>
+                <p>Explain complex concepts in simple and structured ways.</p>
+            </div>
+
+            <div class="card">
+                <h3>PDF Analysis</h3>
+                <p>Upload notes and research papers for intelligent insights.</p>
+            </div>
+
+            <div class="card">
+                <h3>RAG Search</h3>
+                <p>Accurate answers using domain-specific knowledge retrieval.</p>
+            </div>
+
+            <div class="card">
+                <h3>Personalized Learning</h3>
+                <p>Adaptive explanations based on student skill level.</p>
+            </div>
+
+            <div class="card">
+                <h3>Project Guidance</h3>
+                <p>Support for projects, internships, and technical growth.</p>
+            </div>
+
+            <div class="card">
+                <h3>Future AI Mentor</h3>
+                <p>Moving toward a complete engineering learning companion.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <h2 class="section-title">Technology Stack</h2>
+
+        <div class="tech-stack">
+            <div class="tech">Python</div>
+            <div class="tech">FastAPI</div>
+            <div class="tech">LangChain</div>
+            <div class="tech">ChromaDB</div>
+            <div class="tech">Hugging Face</div>
+            <div class="tech">Ollama</div>
+            <div class="tech">React</div>
+            <div class="tech">GitHub</div>
+        </div>
+
+    </div>
+</section>
+
+<section id="roadmap">
+    <div class="container">
+
+        <h2 class="section-title">Roadmap</h2>
+
+        <ul class="roadmap">
+            <li>✅ Phase 1 – RAG Prototype</li>
+            <li>✅ Phase 2 – PDF Processing</li>
+            <li>🚧 Phase 3 – Web Interface</li>
+            <li>⬜ Phase 4 – Personalized Learning</li>
+            <li>⬜ Phase 5 – Voice Interaction</li>
+            <li>⬜ Phase 6 – Mobile Application</li>
+        </ul>
+
+    </div>
+</section>
+
+<section id="team">
+    <div class="container">
+
+        <h2 class="section-title">Our Team</h2>
+
+        <div class="grid">
+
+            <div class="member">
+                <h3>Balapriyan Selvakumar</h3>
+                <p>Founder & AI Systems Developer</p>
+            </div>
+
+            <div class="member">
+                <h3>Rubiga Hariprasath</h3>
+                <p>AI Intern Project Contributor</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <h3>LearnLens AI</h3>
+    <p>Building AI tools for Education, Engineering and Innovation.</p>
+    <br>
+    <p>© 2026 LearnLens AI. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>

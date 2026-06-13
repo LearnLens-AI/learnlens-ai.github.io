@@ -1,228 +1,352 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LearnLens AI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
+<title>LearnLens AI</title>
+
 <style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:Arial, sans-serif;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", sans-serif;
+}
 
-    body{
-        background:#f5f7fa;
-        color:#333;
-    }
+html{
+    scroll-behavior:smooth;
+}
 
-    nav{
-        background:#0f172a;
-        color:white;
-        padding:15px 50px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-    }
+body{
+    background:#0f172a;
+    color:#ffffff;
+    line-height:1.6;
+}
 
-    nav h2{
-        color:#38bdf8;
-    }
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#020617;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
 
-    nav ul{
-        list-style:none;
-        display:flex;
-        gap:20px;
-    }
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+    color:#38bdf8;
+}
 
-    nav a{
-        color:white;
-        text-decoration:none;
-    }
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
 
-    .hero{
-        text-align:center;
-        padding:100px 20px;
-        background:#0f172a;
-        color:white;
-    }
+nav a{
+    text-decoration:none;
+    color:white;
+}
 
-    .hero h1{
-        font-size:3rem;
-        margin-bottom:20px;
-    }
+nav a:hover{
+    color:#38bdf8;
+}
 
-    .hero span{
-        color:#38bdf8;
-    }
+.hero{
+    min-height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
 
-    .hero p{
-        font-size:1.2rem;
-        max-width:700px;
-        margin:auto;
-    }
+.hero h1{
+    font-size:4rem;
+    color:#38bdf8;
+}
 
-    .btn{
-        display:inline-block;
-        margin-top:25px;
-        padding:12px 25px;
-        background:#38bdf8;
-        color:#0f172a;
-        text-decoration:none;
-        border-radius:6px;
-        font-weight:bold;
-    }
+.hero p{
+    font-size:1.3rem;
+    margin-top:15px;
+    max-width:700px;
+    color:#cbd5e1;
+}
 
-    section{
-        padding:60px 10%;
-    }
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 28px;
+    background:#38bdf8;
+    color:#0f172a;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
 
-    h2{
-        text-align:center;
-        margin-bottom:30px;
-    }
+section{
+    padding:80px 10%;
+}
 
-    .features{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-        gap:20px;
-    }
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#38bdf8;
+    font-size:2.2rem;
+}
 
-    .card{
-        background:white;
-        padding:20px;
-        border-radius:10px;
-        box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    }
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
 
-    .team{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-        gap:20px;
-    }
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
 
-    .member{
-        background:white;
-        padding:20px;
-        text-align:center;
-        border-radius:10px;
-        box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    }
+.team-member{
+    text-align:center;
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+}
 
-    footer{
-        background:#0f172a;
-        color:white;
-        text-align:center;
-        padding:20px;
-    }
+.team-member h3{
+    color:#38bdf8;
+}
+
+ul{
+    padding-left:20px;
+}
+
+.footer{
+    text-align:center;
+    padding:30px;
+    background:#020617;
+    color:#94a3b8;
+}
+
+.github-link{
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+.github-link:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+}
 </style>
-```
-
 </head>
 
 <body>
 
 <nav>
-    <h2>LearnLens AI</h2>
+    <div class="logo">LearnLens AI</div>
+
     <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
         <li><a href="#team">Team</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#projects">Projects</a></li>
     </ul>
 </nav>
 
 <section class="hero">
-    <h1>Welcome to <span>LearnLens AI</span></h1>
 
-```
-<p>
-    Building AI-powered tools to make engineering education smarter,
-    faster and more accessible.
-</p>
+    <h1>LearnLens AI</h1>
 
-<a class="btn" href="https://github.com/LearnLens-AI">
-    View GitHub
-</a>
-```
+    <p>
+        Building AI solutions through learning and collaboration.
+    </p>
+
+    <a href="https://github.com/LearnLens-AI"
+       target="_blank"
+       class="btn">
+       Visit GitHub
+    </a>
 
 </section>
 
 <section id="about">
-    <h2>About AI Intern</h2>
 
-```
-<p style="text-align:center; max-width:800px; margin:auto;">
-    AI Intern is a learning assistant developed by LearnLens AI.
-    It helps students understand technical concepts, analyze documents,
-    and improve learning through artificial intelligence.
-</p>
-```
-
-</section>
-
-<section id="features">
-    <h2>Features</h2>
-
-```
-<div class="features">
+    <h2 class="section-title">About Us</h2>
 
     <div class="card">
-        <h3>Engineering Tutor</h3>
-        <p>Understand complex concepts easily.</p>
-    </div>
 
-    <div class="card">
-        <h3>PDF Analysis</h3>
-        <p>Extract knowledge from notes and research papers.</p>
-    </div>
+        <p>
+            LearnLens AI is a student-driven team focused on Artificial Intelligence,
+            Embedded Systems, Robotics, and emerging technologies.
 
-    <div class="card">
-        <h3>AI Assistance</h3>
-        <p>Get intelligent explanations and guidance.</p>
-    </div>
+            Our goal is to learn, innovate, and develop impactful solutions
+            that solve real-world problems through collaboration and continuous learning.
+        </p>
 
-    <div class="card">
-        <h3>Project Support</h3>
-        <p>Help for internships, projects and technical learning.</p>
-    </div>
+        <br>
 
-</div>
-```
+        <h3>Team Name</h3>
+
+        <p><strong>Perceptronix</strong></p>
+
+    </div>
 
 </section>
 
 <section id="team">
-    <h2>Our Team</h2>
 
-```
-<div class="team">
+    <h2 class="section-title">Our Team</h2>
 
-    <div class="member">
-        <h3>Balapriyan</h3>
-        <p>Founder & Project Lead</p>
+    <div class="grid">
+
+        <div class="team-member">
+            <h3>Balapriyan Selvakumar</h3>
+            <p>Team Member</p>
+        </div>
+
+        <div class="team-member">
+            <h3>Rubiga</h3>
+            <p>Team Member</p>
+        </div>
+
+        <div class="team-member">
+            <h3>Hariprasath</h3>
+            <p>Team Member</p>
+        </div>
+
     </div>
-
-    <div class="member">
-        <h3>Rubiga</h3>
-        <p>AI & Research Team</p>
-    </div>
-
-    <div class="member">
-        <h3>Hariprasath</h3>
-        <p>Development Team</p>
-    </div>
-
-</div>
-```
 
 </section>
 
-<footer>
-    <p>© 2026 LearnLens AI | AI Intern Project</p>
+<section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="grid">
+
+        <div class="card">Python</div>
+
+        <div class="card">Machine Learning</div>
+
+        <div class="card">Embedded Systems</div>
+
+        <div class="card">Internet of Things (IoT)</div>
+
+        <div class="card">Data Analysis</div>
+
+    </div>
+
+</section>
+
+<section id="interests">
+
+    <h2 class="section-title">Areas of Interest</h2>
+
+    <div class="grid">
+
+        <div class="card">Artificial Intelligence</div>
+
+        <div class="card">Robotics</div>
+
+        <div class="card">Automation</div>
+
+        <div class="card">Smart Systems</div>
+
+        <div class="card">Assistive Technology</div>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2 class="section-title">Project Focus</h2>
+
+    <div class="grid">
+
+        <div class="card">AI + Embedded Systems</div>
+
+        <div class="card">Computer Vision</div>
+
+        <div class="card">Smart Monitoring Systems</div>
+
+        <div class="card">Intelligent Learning Systems</div>
+
+        <div class="card">Edge AI Applications</div>
+
+    </div>
+
+    <br><br>
+
+    <div class="card">
+
+        <h3>Current Initiative: AI Intern</h3>
+
+        <br>
+
+        <p>
+            AI Intern is an AI-powered educational assistant designed
+            to help students learn technical concepts, analyze documents,
+            and improve learning efficiency through intelligent guidance
+            and knowledge retrieval.
+        </p>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="section-title">GitHub Repository</h2>
+
+    <div class="card" style="text-align:center;">
+
+        <a class="github-link"
+           href="https://github.com/LearnLens-AI"
+           target="_blank">
+
+           github.com/LearnLens-AI
+
+        </a>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <h3>LearnLens AI</h3>
+
+    <p>Learning • Building • Innovating</p>
+
+    <br>
+
+    <p>© 2026 LearnLens AI</p>
+
 </footer>
 
 </body>
